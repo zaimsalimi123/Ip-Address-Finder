@@ -1,18 +1,18 @@
 import requests
 import streamlit as st
 
-url = "https://api.ipgeolocation.io/ipgeo?apiKey=54ca81e4a7b34d51a063370066694c38&output=json"
-api = "54ca81e4a7b34d51a063370066694c38"
+url = "your_api_key_link"
+api = "your_api_key"
 
 response = requests.get(url)
 content = response.json()
 
-#1  2   3     4     5
-ip,isp,org,country,city = (content["ip"], #1
-                           content["isp"],#2
-                           content["organization"],#3
-                           content["country_name"],#4
-                           content["city"])#5
+
+ip,isp,org,country,city = (content["ip"], 
+                           content["isp"],
+                           content["organization"],
+                           content["country_name"],
+                           content["city"])
 
 st.header("Find Your IP Address")
 
